@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="index.css">
+  <title>Frontend Mentor | Todo app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="header" ></div>
+  <div class="input">
+    <div>
+      <span class="heading">T O D O
+      </span>
+      <button id="mode-icon" ></button>
+    </div>
+    
+
+    <div id="new-item" class="new-item">
+      <div class="round">
+        <input type="checkbox" id="checkbox1" />
+        <label for="checkbox1"></label>
+      </div>
+      <div>
+        <input type="form" id="new-todo" autocomplete="off" placeholder="Create a new todo...">
+      </div>
+    </div>
+
+    <div >
+      <ul id="list" >
+      </ul>
+      <div id="taskbar" class="taskbar">
+        <span id="remaining-items"></span>
+        <button id="all-button">All</button>
+        <button id="active-button">Active</button>
+        <button id="completed-button">Completed</button>
+        <button id="btn_3">Clear Completed</button>
+      </div>
+    </div>
+    
+    
+  </div>
+
+
+
+  <!-- Add dynamic number --> 
+
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Gokul</a>.
+  </div>
+  <script src="index.js"></script>
+</body>
+
+</html>
