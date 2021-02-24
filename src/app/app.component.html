@@ -1,0 +1,11 @@
+<div id="header" [ngClass]="{'light-mode':mode === 'light','dark-mode':mode === 'dark'}"></div>
+<div class="input">
+  <div class="title">
+    <div class="heading">T O D O
+    </div>
+    <button id="mode-icon" [ngClass]="{'icon-light':mode === 'light','icon-dark':mode === 'dark'}"
+      (click)="changeMode()"></button>
+  </div>
+
+  <todo-list [displayMode]="mode"></todo-list>
+</div>

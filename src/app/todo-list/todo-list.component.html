@@ -1,0 +1,47 @@
+<div  id="new-item" class="new-item" [ngClass]="{'light':displayMode==='light','dark':displayMode==='dark'}">
+    <div appCheckbox class="round" (click)="alreadyCompleted = !alreadyCompleted">
+        <img id='im-new' src="../../assets/images/icon-check.svg">
+    </div>
+    <div>
+        <form #inputData="ngForm" (keydown)="onEnter($event,inputData)">
+            <input type="text" id="new-todo" name="value" autocomplete="off" placeholder="Create a new todo..." ngModel>
+        </form>
+    </div>
+</div>
+
+   
+    <div cdkDropList (cdkDropListDropped)="drop($event)" class="list" [ngClass]="{'light':displayMode==='light','dark':displayMode==='dark'}">
+
+        <div cdkDrag *ngFor="let item of allItemsList | filterCustom:(displayState !== 'all' || allItemsList) && displayState" class="items"  (mouseover)="onMouseHover(item)" (mouseleave)="onMouseLeave(item)" >
+                <div appCheckbox [setCompletedStatus]="item.completed" class="round" (click)="toggleCompleted(item)">
+                    <img  id='im-{{item.id}}' src="../../assets/images/icon-check.svg">
+                </div>
+                <li class="list-box"[ngClass]="{'completed':item.completed}">{{item.value}}
+                    <button id="{{item.id}}" class="close" [ngClass]="{'show-close-icon':item.isHovering}" (click)="onDelete(item)"></button>
+                </li>
+        </div>
+
+        <div *ngIf="allItemsList.length>0" class="taskbar" (click)="onTaskbarAction($event)">
+            <span id="remaining-items">{{itemsLeft}} items left</span>
+            <span appHighlightButton class="filter-buttons">
+                <button id="all">All</button>
+                <button id="active">Active</button>
+                <button id="completed">Completed</button>
+            </span>
+            <span><button id="clear">Clear Completed</button></span>
+           
+        
+        
+        </div>
+       
+    </div>
+    <span *ngIf="allItemsList.length>0" class="taskbar filter-buttons-responsive" [ngClass]="{'light':displayMode==='light','dark':displayMode==='dark'}">
+        <span class="filter-buttons-responsive" appHighlightButton (click)="onTaskbarAction($event)">
+            <button id="all">All</button>
+            <button id="active">Active</button>
+            <button id="completed">Completed</button> 
+        </span>
+    </span>
+    <p *ngIf="allItemsList.length>0" style="text-align: center;color: hsl(233, 6%, 51%) ;">Drag and drop to reorder list</p>
+   
+
