@@ -1,0 +1,10 @@
+<div class="container border py-100 my-30  ">
+    <h1 class="row">Test Todo Login</h1>
+    <form [formGroup]="loginForm">
+        <label for="username">Username:</label>
+    <input class="row " type="text" name="username" formControlName="username" placeholder="Enter you username...">
+    <label>Password:</label>
+    <input class="row" type="password" formControlName="password" placeholder="Enter you password...">
+    <button [disabled]="!loginForm.valid" (click)="onSubmit()">Login</button>
+    </form>
+</div>

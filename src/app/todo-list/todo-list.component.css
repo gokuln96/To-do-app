@@ -1,0 +1,175 @@
+
+
+.new-item{ 
+    /* width:60%; */
+    height:55px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid  black;
+    display: flexbox;
+}
+
+.taskbar{
+    /* border: 1px solid black; */
+    border-radius: 5px;
+    padding: 20px;  
+    display: flex;
+  }
+
+  .filter-buttons{
+    display: none;
+  }
+  .filter-buttons-responsive{
+    width:auto;
+    margin: auto;
+    display:flex;
+  }
+  @media only screen and (min-width: 1130px){
+    .filter-buttons{
+      position: relative;
+     display:flex;
+     width:auto;
+    margin: auto;
+   }
+   .filter-buttons-responsive{
+     display:none;
+    
+   }
+  
+ }
+  input{
+    outline: none;
+    border: none;
+    width: 70%;
+    margin-top: 1em;
+    padding-left: 50px;
+    font-size: 18px;
+    background-color: inherit;
+    color:inherit;
+    caret-color: hsl(220, 98%, 61%);
+  }
+
+  .list{
+    border: 1px solid inherit; 
+    border-radius: 5px;
+    /* width:60%; */
+    /* max-height: 300px;  */
+    /* padding: 0;  */
+    margin:0; 
+    position: relative;
+    overflow:auto;
+  }
+
+  .light{
+    background: hsl(0, 0%, 100%); 
+    color:sl(235, 24%, 19%);
+  }
+
+  .dark{
+    background: hsl(235, 24%, 19%);
+    color:hsl(0, 0%, 98%);
+  }
+
+  .items {
+    display: flex;
+    /* list-style: none; */
+    list-style: none;
+    border-bottom: 0.1px solid hsl(234, 11%, 52%);
+  }
+
+  .list-box{
+    list-style: none;
+    padding: 17px;
+    margin-left: 30px;
+    font-size: 18px;
+  }
+
+
+  .round {
+    position: absolute;
+    width: 22px;
+    height:22px;
+    background-color: inherit;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    left: 2%;
+    margin-top: 1em;
+ 
+  }
+  
+  .round.checked {
+    background-image: linear-gradient(to right,hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    border-color: #66bb6a;
+  }
+
+  .round img{
+    display: none;
+    position: absolute;
+    top: 6px;   
+    left:4px
+  }
+  
+  .round img.checked{
+    display: block;
+  }
+  
+
+  .completed {
+      text-decoration: line-through;
+      color: hsl(234, 11%, 52%) !important;
+  }
+
+  button, .taskbar span{
+      background-color: inherit;
+      border: none;
+      outline: none;
+      color: hsl(234, 11%, 52%);     
+      cursor: pointer;   
+      font-size: 14px; 
+  }
+
+  #clear{
+    position: absolute;
+    right:20px;
+    /* margin-left: 100px; */
+  }
+  #remaining-items{
+    position: absolute;
+    left:20px;
+  }
+
+  .highlight{
+    /* margin-left: 5em; */
+    color:hsl(220, 98%, 61%);;
+  }
+
+  .hide{
+    visibility: hidden;
+  }
+
+ .close{
+    position: absolute;
+    right:5%;
+    display: none;
+    background-image: url(../../assets/images/icon-cross.svg);
+    outline: none;
+    border: none;
+    width: 17px;
+    height:17px;
+    background-color: inherit;
+  }
+
+  .show-close-icon{
+    display: inline-block;
+    cursor: pointer;
+  }
+
+
+
+  
+  .cdk-drag-placeholder {
+    opacity: 0;
+  }
+  
